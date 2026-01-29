@@ -9,12 +9,12 @@
     <input type="text" id="city" placeholder="enter city name">
     <button onclick="displayWeather()">Display Weather</button>
     
-    <div id="weatherWidget"></div>
+    <div id="widget"></div>
 
     <script>
         async function displayWeather() {
             const city = document.getElementById('city').value;
-            const widget = document.getElementById('weatherWidget');
+            const widget = document.getElementById('widget');
             
             const geoResponse = await fetch('https://geocoding-api.open-meteo.com/v1/search?name=' + city);
             const geoData = await geoResponse.json();
@@ -29,14 +29,21 @@
             const cityName = geoData.results[0].name;
             const country = geoData.results[0].country;
             
-            const weatherResponse = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m');
+            const weatherResponse = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,relative_humidity_2m,wind_speed_10m');
             const weatherData = await weatherResponse.json();
             
             const temp = weatherData.current.temperature_2m;
+            const humidity = weatherData.current.relative_humidity_2m;
+            const wind = weatherData.current.wind_speed_10m;
             
+            // Widget style display
             widget.innerHTML = 
-                '<h2>' + cityName + ', ' + country + '</h2>' +
-                '<p>Temperature: ' + temp + '°C</p>';
+                '<table border="1">' +
+                '<tr><th colspan="2">' + cityName + ', ' + country + '</th></tr>' +
+                '<tr><td>Temperature</td><td>' + temp + '°C</td></tr>' +
+                '<tr><td>Humidity</td><td>' + humidity + '%</td></tr>' +
+                '<tr><td>Wind Speed</td><td>' + wind + ' km/h</td></tr>' +
+                '</table>';
         }
     </script>
 </body>
