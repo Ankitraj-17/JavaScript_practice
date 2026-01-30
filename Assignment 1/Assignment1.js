@@ -1,4 +1,3 @@
-// 50 Days Of JavaScript - String Exercises
 
 // 1. Declare a variable named challenge and assign it to an initial value
 let challenge = '50 Days Of JavaScript';
@@ -54,28 +53,28 @@ console.log(sentence.indexOf('because')); // 31
 console.log(sentence.lastIndexOf('because')); // 47
 
 // 18. Use search to find first occurrence of 'because'
-console.log(sentence.search('because')); // 31
+console.log(sentence.search('because')); 
 
 // 18.1 Position of first occurrence of 'a' in challenge
-console.log(challenge.indexOf('a')); // 4
+console.log(challenge.indexOf('a')); 
 
 // 19. Use trim() to remove trailing whitespace
 let spacedString = ' 50 Days Of JavaScript ';
-console.log(spacedString.trim()); // '50 Days Of JavaScript'
+console.log(spacedString.trim()); 
 
 // 20. Use startsWith() and make result true
-console.log(challenge.startsWith('50')); // true
+console.log(challenge.startsWith('50')); 
 
 // 21. Use endsWith() and make result true
-console.log(challenge.endsWith('JavaScript')); // true
+console.log(challenge.endsWith('JavaScript')); 
 
 // 22. Use match() to find all 'a's
-console.log(challenge.match(/a/g)); // ['a', 'a']
+console.log(challenge.match(/a/g)); 
 
 // 23. Use concat() to merge strings
 let str1 = '50 Days of';
 let str2 = 'JavaScript';
-console.log(str1.concat(' ', str2)); // '50 Days of JavaScript'
+console.log(str1.concat(' ', str2)); 
 
 // 24. Use repeat() to print the string 2 times
-console.log(challenge.repeat(2)); // '50 Days Of JavaScript50 Days Of JavaScript'
+console.log(challenge.repeat(2)); 
