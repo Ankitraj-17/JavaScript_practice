@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tic Tac Toe</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --board-bg: #ecf0f1;
+            --cell-bg: #ffffff;
+            --text-color: #2c3e50;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            background-color: var(--board-bg);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: var(--cell-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .cell:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.02);
+        }
+
+        /* Specific styles for X and O */
+        .cell.x {
+            color: var(--primary-color);
+        }
+
+        .cell.o {
+            color: var(--secondary-color);
+        }
+
+        /* Highlight for winning cells */
+        .cell.winner {
+            background-color: #2ecc71;
+            color: white;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        .status {
+            margin-top: 30px;
+            font-size: 1.4rem;
+            min-height: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .reset-btn:hover {
+            background-color: #2c3e50;
+            transform: translateY(-2px);
+        }
+
+        .reset-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="game-board" id="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <div class="status" id="status">Player X's Turn</div>
+
+    <button class="reset-btn" id="resetBtn">Restart Game</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
