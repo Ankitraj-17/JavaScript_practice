@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Whack-a-Mole</h1>
+        <div class="game-info">
+            <div class="score-display">Score: <span id="score">0</span></div>
+            <div class="time-display">Time left: <span id="time">15</span></div>
+        </div>
+        <button id="start-btn">Start Game</button>
+        <div class="grid">
+            <div class="hole" id="hole1"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole2"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole3"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole4"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole5"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole6"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole7"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole8"><div class="mole"><div class="mole-nose"></div></div></div>
+            <div class="hole" id="hole9"><div class="mole"><div class="mole-nose"></div></div></div>
+        </div>
 
+        <!-- Game Over Popup -->
+        <div class="popup-overlay" id="popup">
+            <div class="popup-content">
+                <h2>Game Over!</h2>
+                <p>Your Score: <span id="final-score">0</span></p>
+                <button id="play-again-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
